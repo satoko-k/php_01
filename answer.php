@@ -4,6 +4,7 @@
         $questionNumber = $_POST['questionNumber']; 
         $quetionName = $_POST['quetionName']; 
         $quetionImage = $_POST['quetionImage']; 
+        $correctAnswer = $_POST['correctAnswer']; 
 
 
         echo $choice;
@@ -14,6 +15,7 @@
 
         if($choice == $answer){
         $result = '<span style="color: red">正解！</span>';
+        $correctAnswer ++;
         }else{
             $result ='<span style="color: blue">ざんねん！不正解</span>'; 
         }
@@ -27,6 +29,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>花クイズ</title>
     <link rel="stylesheet" href="css/answerstyle.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap" rel="stylesheet">
+    
   </head>
   <body>
     <header>
@@ -47,15 +52,33 @@
         </div>
       </div>
 
-
+      <?php if($questionNumber != 2){ ?>
       <form method="POST" class="form" action="index.php">
      <!-- 問題番号に+1させる questionNumberが1の時は問題2　2の時は問題3-->
       <?php  
-       $questionNumber=+1;
+       $questionNumber++;
       echo $questionNumber;?>
       <input type="" name="questionNumber" value=<?php echo $questionNumber;?>>
+      <input type="" name="correctAnswer" value=<?php echo $correctAnswer;?>>
       <p><input id="send" type="submit" value="次の問題へすすむ" /></p>
+
       </form>
+
+      <?php }else{ ?>
+       <form method="POST" class="form" action="complete.php">
+          <p><input id="send" type="submit" value="結果をみる" /></p>
+          <input type="" name="correctAnswer" value=<?php echo $correctAnswer;?>>
+        </form>
+          <?php } ?>
+
+
+
+
+
+
+
+
+
       
 <!--  
   
