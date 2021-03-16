@@ -1,5 +1,5 @@
 <?php
-//値が存在するか確認する。なければquestionNumber=0(=第１問）にする。
+//POSTされてきた?値が存在するか確認する。なければquestionNumber=0(=第１問）にする。
 if(isset($_POST['questionNumber'])){
   $questionNumber = $_POST['questionNumber'];
 }else{
@@ -7,7 +7,7 @@ if(isset($_POST['questionNumber'])){
 }
   echo $questionNumber;
 
-//値が存在するか確認する。なければ正解数correctAnswer=0にする。
+//POSTされてきた?値が存在するか確認する。なければ正解数correctAnswer=0にする。
 if(isset($_POST['correctAnswer'])){
   $correctAnswer = $_POST['correctAnswer'];
 }else{
@@ -27,27 +27,57 @@ $quizChoice02 = ["夏","春","秋","冬"];
 $quiztitle03 = ["これは何の実でしょう？","img/lily.jpg"];
 $quizChoice03 = ["ユリ","バラ","桜","ヒアシンス"];
 
-// 答えはquizChoiceの配列の一番最初0番目にしてます
-$answer = $quizChoice01[0];
+// 答えはquizChoiceの配列の一番最初0番目にする
+$answer01 = $quizChoice01[0];
+$answer02 = $quizChoice02[0];
+$answer03 = $quizChoice03[0];
+
 // 選択肢の並び順をシャッフルさせる
 shuffle($quizChoice01);
+shuffle($quizChoice02);
+shuffle($quizChoice03);
 //問題文と選択肢の配列を結合する
 $quiz01 = array_merge($quiztitle01 ,$quizChoice01) ;
+$quiz02 = array_merge($quiztitle02 ,$quizChoice02) ;
+$quiz03 = array_merge($quiztitle03 ,$quizChoice03) ;
 // print_r($quiz01);
 // echo $answer;
 
-$quetionName = $quiz01[0];
-$quetionImage = $quiz01[1];
-$answerA = $quiz01[2];
-$answerB = $quiz01[3];
-$answerC = $quiz01[4];
-$answerD = $quiz01[5];
+$quizArray = [$quiz01,$quiz02,$quiz03];
 
-// echo $quetionName;
-// echo $quetionImage;
-// echo $answerA;
-// echo $answerB;
-// echo $answerC;
+var_dump ($quizArray);
+
+
+// 2次元配列にする
+$quetionName = $quizArray[$questionNumber][0];
+$quetionImage = $quizArray[$questionNumber][1];
+$answerA = $quizArray[$questionNumber][2];
+$answerB = $quizArray[$questionNumber][3];
+$answerC = $quizArray[$questionNumber][4];
+$answerD = $quizArray[$questionNumber][5];
+
+// $quetionName = $quiz01[0];
+// $quetionImage = $quiz01[1];
+// $answerA = $quiz01[2];
+// $answerB = $quiz01[3];
+// $answerC = $quiz01[4];
+// $answerD = $quiz01[5];
+
+
+// 問題番号に合わせた「答え」の指定
+$answerArray=[$answer01,$answer02,$answer03];
+var_dump ($answerArray);
+$answer = $answerArray[$questionNumber];
+
+
+
+echo $quetionName;
+echo $quetionImage;
+echo $answerA;
+echo $answerB;
+echo $answerC;
+echo $answerD;
+echo $answer;
 
 ?>
 
@@ -59,10 +89,13 @@ $answerD = $quiz01[5];
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>花クイズ</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap" rel="stylesheet">
+    
   </head>
   <body>
     <header>
-      <h1>めざせ！お花博士！お花クイズ</h1>
+      <h1>めざせ!! お花博士クイズ</h1>
       <p>何問正解できるかな？</p>
     </header>
 
