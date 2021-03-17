@@ -7,11 +7,11 @@
         $correctAnswer = $_POST['correctAnswer']; 
 
 
-        echo $choice;
-        echo $answer;
-        echo $questionNumber;
-        echo $quetionName;
-        echo $quetionImage;
+        // echo $choice;
+        // echo $answer;
+        // echo $questionNumber;
+        // echo $quetionName;
+        // echo $quetionImage;
 
         if($choice == $answer){
         $result = '<span style="color: red">正解！</span>';
@@ -35,7 +35,7 @@
   </head>
   <body>
     <header>
-      <h1>めざせ！お花博士！お花クイズ</h1>
+      <h1>めざせ!! お花博士クイズ</h1>
       <p>何問正解できるかな？</p>
     </header>
 
@@ -57,9 +57,10 @@
      <!-- 問題番号に+1させる questionNumberが1の時は問題2　2の時は問題3-->
       <?php  
        $questionNumber++;
-      echo $questionNumber;?>
-      <input type="" name="questionNumber" value=<?php echo $questionNumber;?>>
-      <input type="" name="correctAnswer" value=<?php echo $correctAnswer;?>>
+      // echo $questionNumber;
+      ?>
+      <input type="hidden" name="questionNumber" value=<?php echo $questionNumber;?>>
+      <input type="hidden" name="correctAnswer" value=<?php echo $correctAnswer;?>>
       <p><input id="send" type="submit" value="次の問題へすすむ" /></p>
 
       </form>
@@ -67,7 +68,7 @@
       <?php }else{ ?>
        <form method="POST" class="form" action="complete.php">
           <p><input id="send" type="submit" value="結果をみる" /></p>
-          <input type="" name="correctAnswer" value=<?php echo $correctAnswer;?>>
+          <input type="hidden" name="correctAnswer" value=<?php echo $correctAnswer;?>>
         </form>
           <?php } ?>
 

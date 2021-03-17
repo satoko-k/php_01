@@ -5,7 +5,7 @@ if(isset($_POST['questionNumber'])){
 }else{
   $questionNumber= 0;
 }
-  echo $questionNumber;
+  // echo $questionNumber;
 
 //POSTされてきた?値が存在するか確認する。なければ正解数correctAnswer=0にする。
 if(isset($_POST['correctAnswer'])){
@@ -13,7 +13,7 @@ if(isset($_POST['correctAnswer'])){
 }else{
   $correctAnswer= 0;
 }
-echo $correctAnswer;
+// echo $correctAnswer;
 
 // 
 // 問題の配列を作る部分
@@ -45,7 +45,7 @@ $quiz03 = array_merge($quiztitle03 ,$quizChoice03) ;
 
 $quizArray = [$quiz01,$quiz02,$quiz03];
 
-var_dump ($quizArray);
+// var_dump ($quizArray);
 
 
 // 2次元配列にする
@@ -66,18 +66,18 @@ $answerD = $quizArray[$questionNumber][5];
 
 // 問題番号に合わせた「答え」の指定
 $answerArray=[$answer01,$answer02,$answer03];
-var_dump ($answerArray);
+// var_dump ($answerArray);
 $answer = $answerArray[$questionNumber];
 
 
 
-echo $quetionName;
-echo $quetionImage;
-echo $answerA;
-echo $answerB;
-echo $answerC;
-echo $answerD;
-echo $answer;
+// echo $quetionName;
+// echo $quetionImage;
+// echo $answerA;
+// echo $answerB;
+// echo $answerC;
+// echo $answerD;
+// echo $answer;
 
 ?>
 
@@ -137,11 +137,11 @@ echo $answer;
         /><label class="radio_label" for="choice04"><?php echo $answerD;?></label><br>
       
         <!--こっそり送る部分  -->
-        <input type="" name="answer" value="<?php echo $answer ?>">
-        <input type="" name="quetionName" value=<?php echo $quetionName;?>>
-        <input type="" name="quetionImage" value=<?php echo $quetionImage;?>>
-        <input type="" name="questionNumber" value=<?php echo $questionNumber;?>>
-        <input type="" name="correctAnswer" value=<?php echo $correctAnswer;?>>
+        <input type="hidden" name="answer" value="<?php echo $answer ?>">
+        <input type="hidden" name="quetionName" value=<?php echo $quetionName;?>>
+        <input type="hidden" name="quetionImage" value=<?php echo $quetionImage;?>>
+        <input type="hidden" name="questionNumber" value=<?php echo $questionNumber;?>>
+        <input type="hidden" name="correctAnswer" value=<?php echo $correctAnswer;?>>
         <p><input id="send" type="submit" value="これで決定" /></p>
       </form>
 
