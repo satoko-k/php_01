@@ -2,6 +2,11 @@ header {
   width: 980px;
   margin: 0 auto;
   text-align: center;
+  font-family: "M PLUS 1p", sans-serif;
+  padding-top: 20px;
+}
+header > p {
+  font-size: 24px;
 }
 
 main {
