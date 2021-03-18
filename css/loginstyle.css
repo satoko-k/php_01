@@ -1,0 +1,35 @@
+header {
+  width: 980px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+.wrapper {
+  width: 980px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper2 {
+  width: 980px;
+  text-align: center;
+}
+
+.form {
+  padding: 20px;
+  border-radius: 10px;
+  border: solid 1px rgb(233, 233, 233);
+  background-color: rgb(233, 233, 233);
+}
+footer {
+  position: absolute; /* ←絶対位置 */
+  bottom: 0;
+  background-image: url("../img/bg_img.jpg");
+  height: 150px;
+  width: 100%;
+  background-size: contain;
+  z-index: -1000; /* 裏側に置く */
+}

@@ -3,8 +3,8 @@ header {
   margin: 0 auto;
   text-align: center;
   font-family: "M PLUS 1p", sans-serif;
-  height: 200px;
-  display: flex;
+  height: 100px;
+
   justify-content: center;
   align-items: center;
 }
@@ -112,9 +112,10 @@ footer {
   position: absolute; /* ←絶対位置 */
   bottom: 0;
   background-image: url("../img/bg_img.jpg");
-  height: 200px;
+  height: 150px;
   width: 100%;
   background-size: contain;
+  z-index: -1000; /* 裏側に置く */
 }
 
 .start {
@@ -134,4 +135,21 @@ footer {
   display: none;
   z-index: 9999;
   font-size: 50px;
+}
+.loginPlace {
+  font-size: 12px;
+  text-align: right;
+  padding-right: 50px;
+}
+/* ログアウトボタン */
+.btn_logout {
+  border-radius: 5px;
+  background-color: #6ab0c7;
+  padding: 5px;
+  text-decoration: none;
+  color: white;
+}
+
+.btn:hover {
+  background-color: #8dc5d8;
 }

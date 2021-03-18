@@ -56,36 +56,25 @@ main {
 .answerArea > img {
   margin-right: 10px;
 }
-/* .radio_input {
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute !important;
-}
 
-.radio_label {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  margin-right: 18px;
-  border-radius: 3px;
-  transition: all 0.2s;
-  border: 1px solid #707070;
-}
-
-.radio_label:hover {
-  background: #ffc2e4;
-}
-
-.radio_input:checked + .radio_label {
-  background: #fd489d;
-  color: #fff;
-}
-
-.radio_input:focus + .radio_label {
-  outline-color: #4d90fe;
-  outline-offset: -2px;
-  outline-style: auto;
-  outline-width: 5px;
-} */
 #send {
   font-size: 20px;
   padding: 5px 10px;
+}
+.loginPlace {
+  font-size: 12px;
+  text-align: right;
+  padding-right: 50px;
+}
+/* ログアウトボタン */
+.btn_logout {
+  border-radius: 5px;
+  background-color: #6ab0c7;
+  padding: 5px;
+  text-decoration: none;
+  color: white;
+}
+
+.btn:hover {
+  background-color: #8dc5d8;
 }
