@@ -1,4 +1,14 @@
-    <?php
+    <?php 
+
+        session_start();
+
+        include("function.php");
+        loginCheck();
+        // echo $_SESSION["chk_ssid"];
+
+        // echo $_SESSION["u_name"] ;
+        // echo $_SESSION["life_flg"];
+
         $correctAnswer = $_POST['correctAnswer']; 
         // echo $correctAnswer;
 
@@ -35,8 +45,9 @@
         <p>結果発表</p>
       </div>
     <header>
+    <p class="loginPlace">こんにちは！<?php echo $_SESSION["u_name"] ;?>さん<a href="logout.php" class="btn_logout">ログアウト</a></p>
       <h1>めざせ!! お花博士クイズ</h1>
-      <p></p>
+
     </header>
 
     <main>
@@ -51,7 +62,7 @@
       
         <!--こっそり送る部分  -->
 
-    <form method="POST" class="form" action="index.php">
+    <form method="POST" class="form" action="quize.php">
       <?php 
       $questionNumber = 0;
       // echo $questionNumber;
